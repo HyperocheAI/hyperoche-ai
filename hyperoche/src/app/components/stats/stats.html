@@ -1,0 +1,13 @@
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      @for (stat of stats; track stat.value) {
+        <div class="stat-item">
+          <div class="stat-icon" [innerHTML]="stat.icon | safeHtml"></div>
+          <div class="stat-number">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

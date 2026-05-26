@@ -1,0 +1,27 @@
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Our Solutions</div>
+      <h2 class="section-title">AI That Works <span class="gradient-text">As Hard As You Do</span></h2>
+      <p class="section-subtitle">From intelligent automation to real-time insights, Hyperoche's AI solutions tackle your most time-consuming tasks so your team can focus on what matters.</p>
+    </div>
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <div class="service-card">
+          <div class="service-icon" [style.background]="service.gradient" [innerHTML]="service.icon | safeHtml"></div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <div class="service-tags">
+            @for (tag of service.tags; track tag) {
+              <span>{{ tag }}</span>
+            }
+          </div>
+          <a href="#contact" class="service-link">
+            Learn more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

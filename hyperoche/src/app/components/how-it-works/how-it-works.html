@@ -1,0 +1,30 @@
+<section class="how-section" id="how-it-works">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Process</div>
+      <h2 class="section-title">Up &amp; Running in <span class="gradient-text">3 Simple Steps</span></h2>
+      <p class="section-subtitle">No complex integrations. No weeks of setup. Hyperoche connects to your existing tools and starts saving you time from day one.</p>
+    </div>
+    <div class="steps-wrapper">
+      <div class="steps-line"></div>
+      <div class="steps-grid">
+        @for (step of steps; track step.title; let i = $index) {
+          <div class="step-card">
+            <div class="step-number">{{ i + 1 }}</div>
+            <div class="step-icon" [innerHTML]="step.icon | safeHtml"></div>
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+            <div class="step-time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+              {{ step.time }}
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+    <div class="how-cta">
+      <a href="#contact" class="btn-primary">Start Your Free Trial <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <span class="how-cta-note">No credit card required · 14-day free trial</span>
+    </div>
+  </div>
+</section>

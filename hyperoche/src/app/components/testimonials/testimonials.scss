@@ -1,0 +1,85 @@
+.testimonials {
+  background: white;
+
+  .testimonials-header {
+    text-align: center; margin-bottom: 64px;
+    .section-subtitle { margin: 0 auto; }
+  }
+
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+
+  .testimonial-card {
+    background: var(--bg-dark); border-radius: 20px; padding: 32px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    display: flex; flex-direction: column;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(108,99,255,0.1);
+      background: white;
+    }
+
+    .card-top {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      margin-bottom: 20px;
+
+      .stars {
+        display: flex; gap: 3px;
+        .star { color: #F59E0B; font-size: 1rem; }
+      }
+
+      .quote-icon {
+        width: 36px; height: 36px; border-radius: 10px;
+        background: rgba(108,99,255,0.1);
+        display: flex; align-items: center; justify-content: center;
+        color: var(--primary); font-size: 1.2rem; font-weight: 900;
+        line-height: 1;
+      }
+    }
+
+    .testimonial-metric {
+      background: rgba(108,99,255,0.06); border-radius: 12px; padding: 14px 16px;
+      margin-bottom: 16px;
+
+      .metric-val {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.6rem; font-weight: 800;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      }
+
+      .metric-lbl { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
+    }
+
+    blockquote {
+      font-size: 0.92rem; color: var(--text-secondary);
+      line-height: 1.7; flex: 1; font-style: italic;
+      margin-bottom: 24px;
+    }
+
+    .author {
+      display: flex; align-items: center; gap: 12px;
+      border-top: 1px solid var(--border); padding-top: 20px;
+
+      .author-avatar {
+        width: 44px; height: 44px; border-radius: 50%;
+        background: var(--gradient-primary);
+        display: flex; align-items: center; justify-content: center;
+        color: white; font-size: 0.85rem; font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .author-info {
+        strong { display: block; font-size: 0.9rem; color: var(--text-primary); font-weight: 700; }
+        span { font-size: 0.8rem; color: var(--text-muted); }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .testimonials .testimonials-grid { grid-template-columns: 1fr; }
+}

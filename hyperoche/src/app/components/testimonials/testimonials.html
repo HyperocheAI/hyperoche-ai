@@ -1,0 +1,32 @@
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Client Stories</div>
+      <h2 class="section-title">Teams That Got Their <span class="gradient-text">Time Back</span></h2>
+      <p class="section-subtitle">Real results from real companies that partnered with Hyperoche to automate their workflows and scale without hiring more.</p>
+    </div>
+    <div class="testimonials-grid">
+      @for (t of testimonials; track t.name; let i = $index) {
+        <div class="testimonial-card" [class.featured]="i === 1">
+          <div class="testimonial-stars">
+            @for (s of stars; track s) {
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            }
+          </div>
+          <p class="testimonial-text">"{{ t.text }}"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" [style.background]="t.gradient">{{ t.initials }}</div>
+            <div class="author-info">
+              <strong>{{ t.name }}</strong>
+              <span>{{ t.role }} · {{ t.company }}</span>
+            </div>
+          </div>
+          <div class="testimonial-result">
+            <span class="result-value">{{ t.result }}</span>
+            <span class="result-label">{{ t.resultLabel }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
