@@ -4,7 +4,7 @@
   .footer-top {
     display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 48px; padding-bottom: 56px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
   .footer-brand {
@@ -12,23 +12,24 @@
       display: flex; align-items: center; gap: 10px;
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700; font-size: 1.2rem; color: white;
-      margin-bottom: 16px;
+      text-decoration: none; margin-bottom: 16px;
+      display: inline-flex;
     }
 
     .brand-tagline {
-      font-size: 0.88rem; color: rgba(255,255,255,0.55);
+      font-size: 0.88rem; color: rgba(255,255,255,0.5);
       line-height: 1.7; max-width: 280px; margin-bottom: 24px;
     }
 
     .social-links {
-      display: flex; gap: 12px;
+      display: flex; gap: 10px;
 
       a {
         width: 38px; height: 38px; border-radius: 10px;
-        background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
         display: flex; align-items: center; justify-content: center;
-        color: rgba(255,255,255,0.6); transition: all 0.2s ease;
-
+        color: rgba(255,255,255,0.55); transition: all 0.2s ease;
+        text-decoration: none;
         &:hover {
           background: rgba(108,99,255,0.3);
           border-color: rgba(108,99,255,0.5);
@@ -40,17 +41,17 @@
 
   .footer-links-group {
     h4 {
-      font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.9);
-      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px;
+      font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.9);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;
     }
 
     ul {
-      list-style: none;
+      list-style: none; padding: 0; margin: 0;
       li {
         margin-bottom: 10px;
         a {
-          font-size: 0.875rem; color: rgba(255,255,255,0.5);
-          transition: color 0.2s ease;
+          font-size: 0.875rem; color: rgba(255,255,255,0.45);
+          text-decoration: none; transition: color 0.2s ease;
           &:hover { color: white; }
         }
       }
@@ -61,11 +62,15 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 24px 0;
 
-    p { font-size: 0.85rem; color: rgba(255,255,255,0.4); }
+    p { font-size: 0.83rem; color: rgba(255,255,255,0.35); }
 
     .footer-legal {
       display: flex; gap: 24px;
-      a { font-size: 0.85rem; color: rgba(255,255,255,0.4); transition: color 0.2s ease; &:hover { color: white; } }
+      a {
+        font-size: 0.83rem; color: rgba(255,255,255,0.35);
+        text-decoration: none; transition: color 0.2s ease;
+        &:hover { color: white; }
+      }
     }
   }
 }
@@ -74,7 +79,6 @@
   .footer .footer-top { grid-template-columns: 1fr 1fr; }
   .footer .footer-brand { grid-column: 1 / -1; }
 }
-
 @media (max-width: 500px) {
   .footer .footer-top { grid-template-columns: 1fr; }
   .footer .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }

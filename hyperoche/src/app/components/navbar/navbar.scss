@@ -18,20 +18,21 @@
   .logo {
     display: flex; align-items: center; gap: 10px;
     font-family: 'Space Grotesk', sans-serif; font-weight: 700;
-    font-size: 1.25rem; color: var(--text-primary);
-
+    font-size: 1.2rem; color: var(--text-primary);
+    text-decoration: none;
     .logo-icon { display: flex; align-items: center; }
     .logo-text { letter-spacing: -0.02em; }
   }
 
   .nav-links {
-    display: flex; align-items: center; gap: 8px;
-    list-style: none;
+    display: flex; align-items: center; gap: 4px;
+    list-style: none; margin: 0; padding: 0;
 
-    a {
+    li a {
       font-size: 0.9rem; font-weight: 500;
       color: var(--text-secondary); padding: 8px 16px;
       border-radius: 8px; transition: all 0.2s ease;
+      text-decoration: none;
       &:hover { color: var(--primary); background: rgba(108,99,255,0.06); }
     }
   }
@@ -39,25 +40,13 @@
   .nav-actions {
     display: flex; align-items: center; gap: 12px;
 
-    .btn-nav-outline {
-      padding: 9px 22px; border-radius: 50px;
-      border: 1.5px solid var(--border); font-weight: 600;
-      font-size: 0.9rem; color: var(--text-primary);
-      background: transparent; cursor: pointer; transition: all 0.2s ease;
-      &:hover { border-color: var(--primary); color: var(--primary); }
-    }
-
-    .btn-nav-primary {
-      padding: 9px 22px; border-radius: 50px;
-      background: var(--gradient-primary); color: white;
-      font-weight: 600; font-size: 0.9rem;
-      border: none; cursor: pointer; transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(108,99,255,0.3);
-      &:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(108,99,255,0.45); }
+    .btn-primary.nav-cta {
+      padding: 10px 24px; font-size: 0.9rem; font-weight: 600;
+      border-radius: 50px; text-decoration: none;
     }
   }
 
-  .menu-toggle {
+  .hamburger {
     display: none; flex-direction: column; gap: 5px;
     background: none; border: none; cursor: pointer; padding: 4px;
 
@@ -66,37 +55,36 @@
       background: var(--text-primary); border-radius: 2px;
       transition: all 0.3s ease;
     }
-  }
 
-  .mobile-menu {
-    display: none; position: absolute; top: 100%; left: 0; right: 0;
-    background: white; border-top: 1px solid var(--border);
-    padding: 16px 24px 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-
-    &.open { display: block; }
-
-    ul {
-      list-style: none; margin-bottom: 16px;
-      li a {
-        display: block; padding: 12px 0;
-        color: var(--text-secondary); font-weight: 500;
-        border-bottom: 1px solid var(--border);
-        &:hover { color: var(--primary); }
-      }
-    }
-
-    .mobile-actions {
-      display: flex; flex-direction: column; gap: 10px; margin-top: 8px;
-      button { width: 100%; padding: 12px; font-size: 0.95rem; font-weight: 600; border-radius: 50px; cursor: pointer; }
-      .btn-nav-outline { border: 1.5px solid var(--border); background: transparent; color: var(--text-primary); }
-      .btn-nav-primary { background: var(--gradient-primary); color: white; border: none; box-shadow: 0 4px 15px rgba(108,99,255,0.3); }
-    }
+    &.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    &.active span:nth-child(2) { opacity: 0; }
+    &.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   }
 }
 
 @media (max-width: 768px) {
   .navbar {
-    .nav-links, .nav-actions { display: none; }
-    .menu-toggle { display: flex; }
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(20px);
+
+    .nav-links {
+      display: none; position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 0;
+      background: white; border-top: 1px solid var(--border);
+      padding: 12px 24px 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+
+      &.open { display: flex; }
+
+      li a {
+        display: block; padding: 13px 0;
+        border-bottom: 1px solid var(--border);
+        border-radius: 0;
+      }
+    }
+
+    .nav-actions .btn-primary.nav-cta { display: none; }
+    .hamburger { display: flex; }
   }
 }
