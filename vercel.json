@@ -1,0 +1,7 @@
+{
+  "rootDirectory": "hyperoche",
+  "buildCommand": "npm run build -- --configuration production",
+  "outputDirectory": "dist/hyperoche/browser",
+  "framework": "angular",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
