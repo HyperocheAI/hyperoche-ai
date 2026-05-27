@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary: #6C63FF;
-  --primary-dark: #5A52D5;
-  --accent: #00B894;
-  --bg-dark: #F8F8FF;
-  --bg-card: #FFFFFF;
-  --bg-card-hover: #F4F3FF;
-  --text-primary: #0D0B26;
-  --text-secondary: #4A4870;
-  --text-muted: #8886A8;
-  --border: rgba(108, 99, 255, 0.15);
+  --primary: #8B84FF;
+  --primary-dark: #6C63FF;
+  --accent: #00D4AA;
+  --bg-dark: #0D0B1F;
+  --bg-card: #161430;
+  --bg-card-hover: #1E1B40;
+  --text-primary: #F0EEFF;
+  --text-secondary: #A8A6C8;
+  --text-muted: #6864A0;
+  --border: rgba(139, 132, 255, 0.18);
   --gradient-primary: linear-gradient(135deg, #6C63FF 0%, #00D4AA 100%);
-  --shadow-card: 0 2px 16px rgba(108, 99, 255, 0.08);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --bg-footer: #070617;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,7 +53,7 @@ a { text-decoration: none; color: inherit; }
   padding: 13px 32px; border-radius: 50px; font-weight: 600;
   font-size: 1rem; border: 1.5px solid var(--border); cursor: pointer;
   transition: all 0.3s ease;
-  &:hover { border-color: var(--primary); background: rgba(108,99,255,0.06); transform: translateY(-2px); }
+  &:hover { border-color: var(--primary); background: rgba(139,132,255,0.1); transform: translateY(-2px); }
 }
 
 .section-label {

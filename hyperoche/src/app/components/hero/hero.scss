@@ -1,7 +1,7 @@
 .hero {
   padding: 140px 0 100px;
   position: relative; overflow: hidden;
-  background: linear-gradient(160deg, #F0EFFF 0%, #F8F8FF 50%, #E8FFF9 100%);
+  background: var(--bg-dark);
 
   .hero-bg {
     position: absolute; inset: 0; pointer-events: none;
@@ -9,19 +9,19 @@
     .orb {
       position: absolute; border-radius: 50%;
       &.orb-1 {
-        width: 600px; height: 600px; top: -200px; right: -150px;
-        background: radial-gradient(circle, rgba(108,99,255,0.1) 0%, transparent 70%);
+        width: 700px; height: 700px; top: -250px; right: -200px;
+        background: radial-gradient(circle, rgba(108,99,255,0.18) 0%, transparent 65%);
       }
       &.orb-2 {
-        width: 400px; height: 400px; bottom: -100px; left: -100px;
-        background: radial-gradient(circle, rgba(0,212,170,0.08) 0%, transparent 70%);
+        width: 500px; height: 500px; bottom: -150px; left: -150px;
+        background: radial-gradient(circle, rgba(0,212,170,0.12) 0%, transparent 65%);
       }
     }
 
     .grid-overlay {
       position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(108,99,255,0.04) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(108,99,255,0.04) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(139,132,255,0.05) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(139,132,255,0.05) 1px, transparent 1px);
       background-size: 48px 48px;
     }
   }
@@ -35,7 +35,7 @@
   .hero-text {
     .badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.2);
+      background: rgba(108,99,255,0.15); border: 1px solid rgba(108,99,255,0.3);
       padding: 8px 18px; border-radius: 50px; margin-bottom: 28px;
       font-size: 0.85rem; font-weight: 600; color: var(--primary);
 
@@ -64,24 +64,19 @@
     .hero-actions {
       display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
       margin-bottom: 40px;
-
       a { text-decoration: none; }
     }
 
     .hero-trust {
       display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
 
-      .trust-label {
-        font-size: 0.85rem; color: var(--text-muted); font-weight: 500;
-      }
+      .trust-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
 
       .trust-logos {
         display: flex; gap: 20px;
-
         span {
           font-size: 0.85rem; font-weight: 700;
-          color: var(--text-muted); letter-spacing: -0.01em;
-          opacity: 0.6;
+          color: var(--text-muted); letter-spacing: -0.01em; opacity: 0.7;
         }
       }
     }
@@ -91,9 +86,9 @@
     position: relative; animation: float 6s ease-in-out infinite;
 
     .dashboard-card {
-      background: white; border-radius: 20px; padding: 24px;
-      box-shadow: 0 20px 60px rgba(108,99,255,0.15);
-      border: 1px solid rgba(108,99,255,0.1);
+      background: var(--bg-card); border-radius: 20px; padding: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
 
       .card-header {
         display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
@@ -101,8 +96,7 @@
         .card-dots {
           display: flex; gap: 5px;
           span {
-            width: 10px; height: 10px; border-radius: 50%;
-            background: #e0e0e0;
+            width: 10px; height: 10px; border-radius: 50%; background: #333;
             &:nth-child(1) { background: #FF5F57; }
             &:nth-child(2) { background: #FFBD2E; }
             &:nth-child(3) { background: #28C840; }
@@ -121,14 +115,14 @@
 
           .metric {
             display: flex; align-items: center; gap: 8px;
-            background: var(--bg-dark); border-radius: 12px; padding: 12px;
+            background: var(--bg-card-hover); border-radius: 12px; padding: 12px;
+            border: 1px solid var(--border);
 
             .metric-icon {
               width: 32px; height: 32px; border-radius: 8px;
-              display: flex; align-items: center; justify-content: center;
-              flex-shrink: 0;
-              &.tasks { background: rgba(108,99,255,0.1); }
-              &.time  { background: rgba(0,184,148,0.1); }
+              display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+              &.tasks { background: rgba(108,99,255,0.2); }
+              &.time  { background: rgba(0,212,170,0.15); }
             }
 
             .metric-info {
@@ -137,15 +131,13 @@
               .metric-label { font-size: 0.65rem; color: var(--text-muted); }
             }
 
-            .metric-change {
-              margin-left: auto; font-size: 0.7rem; font-weight: 700;
-              &.positive { color: var(--accent); }
-            }
+            .metric-change { margin-left: auto; font-size: 0.7rem; font-weight: 700; &.positive { color: var(--accent); } }
           }
         }
 
         .chart-area {
-          background: var(--bg-dark); border-radius: 12px; padding: 14px; margin-bottom: 14px;
+          background: var(--bg-card-hover); border-radius: 12px; padding: 14px;
+          margin-bottom: 14px; border: 1px solid var(--border);
 
           .chart-label {
             font-size: 0.72rem; color: var(--text-muted); font-weight: 600;
@@ -157,10 +149,9 @@
 
             .bar {
               flex: 1; border-radius: 4px 4px 0 0;
-              background: rgba(108,99,255,0.15);
+              background: rgba(139,132,255,0.15);
               display: flex; align-items: flex-end; justify-content: center;
               padding-bottom: 3px; min-height: 10%;
-              transition: height 0.3s ease;
 
               span { font-size: 0.6rem; color: var(--text-muted); font-weight: 600; }
 
@@ -174,25 +165,21 @@
 
         .ai-pulse {
           display: flex; align-items: center; gap: 8px;
-          background: rgba(0,184,148,0.08); border: 1px solid rgba(0,184,148,0.2);
+          background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.2);
           border-radius: 10px; padding: 10px 14px;
 
           span { font-size: 0.8rem; font-weight: 600; color: var(--accent); }
-
-          .pulse-status {
-            margin-left: auto; font-size: 0.72rem;
-            color: var(--text-muted); font-weight: 400;
-          }
+          .pulse-status { margin-left: auto; font-size: 0.72rem; color: var(--text-muted); font-weight: 400; }
         }
       }
     }
 
     .floating-card {
-      position: absolute; background: white;
+      position: absolute; background: var(--bg-card);
       border-radius: 50px; padding: 10px 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
       display: flex; align-items: center; gap: 10px;
-      border: 1px solid rgba(108,99,255,0.1);
+      border: 1px solid var(--border);
 
       div {
         display: flex; flex-direction: column;

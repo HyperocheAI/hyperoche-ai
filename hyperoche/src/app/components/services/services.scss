@@ -1,5 +1,5 @@
 .services-section {
-  background: white;
+  background: var(--bg-card);
 
   .section-header {
     text-align: center; margin-bottom: 64px;
@@ -26,8 +26,9 @@
 
     &:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(108,99,255,0.12);
-      background: white;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      background: var(--bg-card-hover);
+      border-color: rgba(139,132,255,0.3);
       &::before { opacity: 1; }
     }
 
@@ -53,8 +54,8 @@
       span {
         font-size: 0.72rem; font-weight: 600;
         padding: 4px 10px; border-radius: 50px;
-        background: rgba(108,99,255,0.08); color: var(--primary);
-        border: 1px solid rgba(108,99,255,0.15);
+        background: rgba(139,132,255,0.12); color: var(--primary);
+        border: 1px solid rgba(139,132,255,0.2);
       }
     }
 

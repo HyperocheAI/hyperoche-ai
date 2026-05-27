@@ -3,9 +3,9 @@
 
   .stats-grid {
     display: grid; grid-template-columns: repeat(4, 1fr);
-    background: white;
+    background: var(--bg-card);
     border-radius: 20px;
-    box-shadow: var(--shadow-card);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
     border: 1px solid var(--border);
     overflow: hidden;
   }
@@ -21,7 +21,7 @@
 
     .stat-icon {
       width: 44px; height: 44px; border-radius: 12px;
-      background: rgba(108,99,255,0.08);
+      background: rgba(139,132,255,0.12);
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 16px;
     }
